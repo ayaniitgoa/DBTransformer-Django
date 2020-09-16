@@ -25,7 +25,7 @@ SECRET_KEY = 'j+9dn47nxnc156b41btj!#6$-f_q!m6tencb%049f1e*cj@x=g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'api_dbTransformer',
+    'gunicorn',
+
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
