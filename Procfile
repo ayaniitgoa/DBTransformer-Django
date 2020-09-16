@@ -1,1 +1,1 @@
-web: gunicorn dbTransformer:app
+web: gunicorn dbTransformer.wsgi:application
