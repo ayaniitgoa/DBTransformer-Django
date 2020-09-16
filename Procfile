@@ -1,1 +1,1 @@
-web: gunicorn dbTransformer:application
+web: gunicorn dbTransformer.wsgi --log-file
